@@ -23,7 +23,9 @@
     "types": ["node"], // Include node types
     "lib": ["ES2022"], // JS built-ins
     "allowSyntheticDefaultImports": true,
-    "removeComments": true
+    "removeComments": true,
+    "experimentalDecorators": true,
+    "emitDecoratorMetadata": true,
   },
   "include": ["src/**/*.ts"],
   "exclude": ["node_modules", "dist"]

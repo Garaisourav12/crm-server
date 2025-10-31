@@ -1,10 +1,9 @@
 import mongoose, { Document, Schema, Types } from 'mongoose';
+import { CourseInterest } from '../types';
 
 export interface IEnquiry extends Document {
   name: string;
   email: string;
-  phone?: string;
-  message?: string;
   courseInterest?: string;
   claimedBy?: Types.ObjectId | null;
   claimedAt?: Date | null;
@@ -25,16 +24,9 @@ const enquirySchema = new Schema<IEnquiry>(
       lowercase: true,
       trim: true,
     },
-    phone: {
-      type: String,
-      trim: true,
-    },
-    message: {
-      type: String,
-      trim: true,
-    },
     courseInterest: {
-      type: String,
+      type: CourseInterest,
+      required: [true, 'Course interest is required'],
       trim: true,
     },
     claimedBy: {
