@@ -1,5 +1,5 @@
 import mongoose, { Document, Schema, Types } from 'mongoose';
-import { CourseInterest } from '../types/common';
+import { CourseInterest } from '../enums/common';
 
 export interface IEnquiry extends Document {
   _id: string;

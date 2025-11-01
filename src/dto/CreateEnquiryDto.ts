@@ -1,5 +1,5 @@
 import { IsEmail, IsEnum, IsNotEmpty } from 'class-validator';
-import { CourseInterest } from '../types/common';
+import { CourseInterest } from '../enums/common';
 
 class CreateEnquiryDto {
   @IsNotEmpty({ message: 'Name is required' })

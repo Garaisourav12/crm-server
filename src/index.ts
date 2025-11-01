@@ -38,9 +38,7 @@ const port = process.env.PORT || 8000;
     console.log(`http://localhost:${port}`);
     // Log on production only
     if (process.env.NODE_ENV === 'production') {
-      process.stdout.write(
-        `⚠️ Server started on http://localhost:${port} [Production Build]`,
-      );
+      process.stdout.write(`⚠️ Server started [Production Build]\n`);
     }
   });
 })();

@@ -1,3 +1,5 @@
+import { CourseInterest } from '../enums/common';
+
 export interface IUserResponse {
   id: string;
   name: string;
@@ -5,16 +7,6 @@ export interface IUserResponse {
   password: string;
   createdAt: Date;
   updatedAt: Date;
-}
-
-export enum CourseInterest {
-  WEB_DEVELOPMENT = 'Web Development',
-  DATA_SCIENCE = 'Data Science',
-  MACHINE_LEARNING = 'Machine Learning',
-  CLOUD_COMPUTING = 'Cloud Computing',
-  CYBER_SECURITY = 'Cyber Security',
-  DIGITAL_MARKETING = 'Digital Marketing',
-  UI_UX_DESIGN = 'UI/UX Design',
 }
 
 export interface IEnquiryResponse {
