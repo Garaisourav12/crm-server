@@ -12,7 +12,7 @@ const stripAnsi = require('strip-ansi').default;
     const formatter = await eslint.loadFormatter('stylish');
 
     // Get all TS/JS files in src folder
-    const files = await globby(['src/**/*.{ts,js,cjs,mjs}']);
+    const files = await globby(['src/**/*.{ts,js,cjs,mjs,d.ts}']);
 
     let hasError = false;
 

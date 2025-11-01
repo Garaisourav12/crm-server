@@ -1,7 +1,7 @@
 import { IsEmail, IsEnum, IsNotEmpty } from 'class-validator';
-import { CourseInterest } from '../types'; // your enum file
+import { CourseInterest } from '../types/common';
 
-export class CreateEnquiryDto {
+class CreateEnquiryDto {
   @IsNotEmpty({ message: 'Name is required' })
   name!: string;
 
@@ -11,3 +11,5 @@ export class CreateEnquiryDto {
   @IsEnum(CourseInterest, { message: 'Invalid course interest' })
   courseInterest!: CourseInterest;
 }
+
+export default CreateEnquiryDto;

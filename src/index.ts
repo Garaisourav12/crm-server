@@ -1,10 +1,11 @@
 import dotenv from 'dotenv';
-import express, { Request, Response } from 'express';
+import express, { Response } from 'express';
 import connectDB from './db';
 import {
   globalErrorHandler,
   routeNotFoundErrorHandler,
 } from './middlewares/errorHandler';
+import apiRouter from './routes';
 
 dotenv.config();
 
@@ -19,9 +20,12 @@ const port = process.env.PORT || 8000;
   app.use(express.json());
 
   // Welcome message
-  app.get('/', (req: Request, res: Response) => {
+  app.get('/', (_, res: Response) => {
     res.status(200).json({ message: 'Welcome to the CRM Service' });
   });
+
+  // Routes
+  app.use('api', apiRouter);
 
   // Global error handler (must be last)
   app.use(globalErrorHandler);

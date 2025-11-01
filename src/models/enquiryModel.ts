@@ -1,10 +1,11 @@
 import mongoose, { Document, Schema, Types } from 'mongoose';
-import { CourseInterest } from '../types';
+import { CourseInterest } from '../types/common';
 
 export interface IEnquiry extends Document {
+  _id: string;
   name: string;
   email: string;
-  courseInterest?: string;
+  courseInterest: CourseInterest;
   claimedBy?: Types.ObjectId | null;
   claimedAt?: Date | null;
   createdAt: Date;
@@ -25,7 +26,8 @@ const enquirySchema = new Schema<IEnquiry>(
       trim: true,
     },
     courseInterest: {
-      type: CourseInterest,
+      type: String,
+      enum: Object.values(CourseInterest), // Use the CourseInterest enum
       required: [true, 'Course interest is required'],
       trim: true,
     },

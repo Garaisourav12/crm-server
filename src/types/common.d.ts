@@ -1,5 +1,5 @@
 export interface IUserResponse {
-  _id: string;
+  id: string;
   name: string;
   email: string;
   password: string;
@@ -18,11 +18,11 @@ export enum CourseInterest {
 }
 
 export interface IEnquiryResponse {
-  _id: string;
+  id: string;
   name: string;
   email: string;
   courseInterest: CourseInterest;
-  claimedBy?: Types.ObjectId | null;
+  claimedBy?: string | null;
   claimedAt?: Date | null;
   createdAt: Date;
   updatedAt: Date;
