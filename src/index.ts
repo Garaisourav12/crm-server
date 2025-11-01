@@ -1,6 +1,7 @@
 import cookieParser from 'cookie-parser';
 import dotenv from 'dotenv';
 import express, { Response } from 'express';
+import { setupSwagger } from './config/swagger';
 import connectDB from './db';
 import {
   globalErrorHandler,
@@ -16,6 +17,9 @@ const port = process.env.PORT || 8000;
 (async () => {
   // Connect to MongoDB
   await connectDB();
+
+  // Setup Swagger (before routes)
+  setupSwagger(app);
 
   // Middleware
   app.use(express.json());
