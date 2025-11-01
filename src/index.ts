@@ -1,3 +1,4 @@
+import cookieParser from 'cookie-parser';
 import dotenv from 'dotenv';
 import express, { Response } from 'express';
 import connectDB from './db';
@@ -18,6 +19,7 @@ const port = process.env.PORT || 8000;
 
   // Middleware
   app.use(express.json());
+  app.use(cookieParser());
 
   // Welcome message
   app.get('/', (_, res: Response) => {
@@ -25,7 +27,7 @@ const port = process.env.PORT || 8000;
   });
 
   // Routes
-  app.use('api', apiRouter);
+  app.use('/api', apiRouter);
 
   // Global error handler (must be last)
   app.use(globalErrorHandler);

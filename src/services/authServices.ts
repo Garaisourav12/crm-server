@@ -17,7 +17,6 @@ const registerUser = async (data: CreateUserDto): Promise<IUserResponse> => {
     id: user._id.toString(),
     name: user.name,
     email: user.email,
-    password: user.password,
     createdAt: user.createdAt,
     updatedAt: user.updatedAt,
   };
@@ -41,7 +40,6 @@ const loginUser = async (
     id: user._id.toString(),
     name: user.name,
     email: user.email,
-    password: user.password,
     createdAt: user.createdAt,
     updatedAt: user.updatedAt,
   };
