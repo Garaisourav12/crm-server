@@ -16,8 +16,8 @@ const options: swaggerJsdoc.Options = {
       {
         url:
           process.env.NODE_ENV === 'production'
-            ? 'https://crm-server-q5ga.onrender.com/api'
-            : `http://localhost:${process.env.PORT || 8080}/api`,
+            ? 'https://crm-server-q5ga.onrender.com'
+            : `http://localhost:${process.env.PORT || 8080}`,
       },
     ],
     components: {
