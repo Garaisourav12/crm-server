@@ -14,10 +14,10 @@ const options: swaggerJsdoc.Options = {
     },
     servers: [
       {
-        url: `http://localhost:${process.env.PORT || 8080}/api`,
-      },
-      {
-        url: `https://crm-server-q5ga.onrender.com/api`,
+        url:
+          process.env.NODE_ENV === 'production'
+            ? 'https://crm-server-q5ga.onrender.com/api'
+            : `http://localhost:${process.env.PORT || 8080}/api`,
       },
     ],
     components: {
@@ -107,7 +107,7 @@ const options: swaggerJsdoc.Options = {
     },
   },
   // Files to scan for JSDoc/OpenAPI comments (route/controller files)
-  apis: ['./src/routes/*.ts', './src/controllers/*.ts', './dist/index.js'],
+  apis: ['./src/routes/*.ts', './src/controllers/*.ts'],
 };
 
 const swaggerSpec = swaggerJsdoc(options);
