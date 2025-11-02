@@ -52,6 +52,8 @@ const getUnclaimedEnquries = async (): Promise<IEnquiryResponse[]> => {
     name: enquiry.name,
     email: enquiry.email,
     courseInterest: enquiry.courseInterest,
+    claimedBy: enquiry.claimedBy?.toString(),
+    claimedAt: enquiry.claimedAt,
     createdAt: enquiry.createdAt,
     updatedAt: enquiry.updatedAt,
   }));
@@ -66,6 +68,8 @@ const getMyClaimedEnquries = async (
     name: enquiry.name,
     email: enquiry.email,
     courseInterest: enquiry.courseInterest,
+    claimedBy: enquiry.claimedBy?.toString(),
+    claimedAt: enquiry.claimedAt,
     createdAt: enquiry.createdAt,
     updatedAt: enquiry.updatedAt,
   }));
